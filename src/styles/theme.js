@@ -1,0 +1,50 @@
+export const theme = {
+  fonts: {
+    logoFont: "'Passion One', cursive",
+    displayFont: "Oswald', sans-serif",
+    mainFont: "'Lato', sans-serif",
+  },
+  colors: {
+    mainBackground: "#fafafa",
+    main: "#151515",
+    secondary: "#FFFFFF",
+    lightGray: "#E7E7E7",
+    text1: "#707070",
+    text2: "#949494",
+    text3: "#515151",
+    text4: "#B7B7B7",
+    text5: "#CECECE",
+    text6: "#9B9595",
+    postBackground: "#171717",
+    inputBackground: "#EFEFEF",
+    buttonBackground: "#000000",
+    likeButton: "#AC0000",
+    linkBorder: "#4D4D4D",
+  },
+  spacing: {
+    maxBodyWidth: "940px",
+    headerHeight: "72px",
+  },
+  breakPoints: {
+    mobile: "320px",
+    tablet: "481px",
+    laptop: "769px",
+    desktop: "1279px",
+  },
+  borderRadius: {
+    sm: "6px",
+    md: "10px",
+  },
+  fontSize: {
+    xxs: "0.9rem",
+    xs: "1.2rem",
+    sm: "1.5rem",
+    md: "2rem",
+    ml: "3rem",
+    lg: "4rem",
+    xl: "6rem",
+  },
+  shadow: {
+    gray: "0px 4px 4px 0px #00000040",
+  },
+};
