@@ -39,30 +39,37 @@ export const ListName = styled.h1`
 `;
 
 export const HorizontalList = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 15px 15px 15px 0px;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-  width: 100%;
   height: 300px;
   background-color: green;
 `;
 
 export const HorizontalListItem = styled.div`
-  display: flex;
+  display: inline-block;
+  margin-left: 15px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-   height: 90%;
-   width: 100px;
+   height: 100%;
+   width: 180px;
+   
 
    background-color: red;
 `;
 
-export const LatestChapters = styled.div`
+export const LatestChaptersWrapp = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 32px;
+  margin-bottom: 30px;
   width: clamp(400px, 100%, 90%);
 
   background-color: lightgray;
@@ -74,11 +81,43 @@ export const LatestChapters = styled.div`
 
 export const VerticalList = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 15px 15px 0px 15px;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   width: 100%;
-  height: 1000px;
+  height: 1165px;
   background-color: green;
+`;
+
+export const VerticalListItem = styled.div`
+  flex: 0 0 auto;
+  justify-content: center;
+  margin-bottom: 15px;
+
+  width: 100%;
+  height: 100px;
+  background-color: red;
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(400px, 100%, 90%);
+  height: 100px;
+  background-color: lightgray;
+`;
+export const FooterContent = styled.div`
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 15px;
 `;

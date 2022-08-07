@@ -1,5 +1,25 @@
 import styled from "styled-components";
 
+export const Footer = styled.footer`
+height: ${({ theme }) => theme.spacing.headerHeight};
+  background-color: ${({ theme }) => theme.colors.main};
+  color: ${({ theme }) => theme.colors.secondary};
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+
+  user-select: none;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const Body = styled.main`
 
   display: flex;
@@ -9,8 +29,8 @@ export const Body = styled.main`
   min-height: calc(100vh - ${({ theme }) => theme.spacing.headerHeight});
   margin-top: ${({ theme }) => theme.spacing.headerHeight};
   transition: all 300ms ease;
-
 `
+
 
 export const Header = styled.header`
   height: ${({ theme }) => theme.spacing.headerHeight};
