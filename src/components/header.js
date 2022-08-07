@@ -56,7 +56,7 @@ export default function Header() {
   return (
     <S.Header>
       <Link to="/">
-        <h1>linkr</h1>
+        <h1>Mangas</h1>
       </Link>
       <SearchBar />
       <Navbar onClick={handleMenuClick}>

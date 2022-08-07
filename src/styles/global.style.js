@@ -1,25 +1,15 @@
 import styled from "styled-components";
 
-export const FormWrapp = styled.div`
+export const Body = styled.main`
 
   display: flex;
   flex-direction: column;
-  position: relative;
-  margin-right: -100px;
-  `;
+  align-items: center;
 
-export const Body = styled.main`
-
-  width: 100%;
-  margin: 0 auto;
   min-height: calc(100vh - ${({ theme }) => theme.spacing.headerHeight});
   margin-top: ${({ theme }) => theme.spacing.headerHeight};
   transition: all 300ms ease;
 
-  @media (min-width: ${({ theme }) => theme.breakPoints.laptop}) {
-    max-width: ${({ theme }) => theme.spacing.maxBodyWidth};
-    margin-top: ${({ theme }) => theme.spacing.headerHeight};
-  }
 `
 
 export const Header = styled.header`
@@ -131,73 +121,4 @@ export const DropdownMenu = styled.div`
       filter: brightness(1.5);
     }
   }
-`;
-
-export const ContentWrapper = styled.div`
-  display: flex;
-  gap: 25px;
-`
-
-export const PostsWrapper = styled.div`
-  flex-grow: 1;
-  flex-shrink: 1;
-`
-export const TrendWrapper = styled.div`
-display: flex;
-  justify-content: start;
-  gap: 0.5rem;
-  margin: 185px 0px auto -15px;
-  z-index: 5;
-
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 301px;
-  @media (max-width: 925px) {
-    display: none;
-  }
-`;
-
-export const Trending = styled.div`
-  background-color: ${({ theme }) => theme.colors.postBackground};
-  height: 406px;
-  width: 301px;
-  left: 877px;
-  top: 232px;
-  border-radius: 16px;
-`;
-
-export const TrendingBox = styled.div`
-
-  color: ${({ theme }) => theme.colors.secondary};
-  background-color: ${({ theme }) => theme.colors.main};
-  border-radius: 16px;
-  width: 100%;
-  height: auto;
-  font-weight: 700;
-  padding-bottom: 7px;
-`;
-
-export const Title = styled.div`
-  font-size: 27px;
-  line-height: 40px;
-  border-bottom: 1px solid #484848;
-  padding: 9px 0px 12px 16px;
-`;
-
-export const Trends = styled.div`
-  font-size: 17px;
-  margin: 10px 10px 0px 0px;
-  padding: 0px 0px 10px 16px;
-  letter-spacing: 0.05em;
-  :hover {
-    cursor: pointer;
-    filter: brightness(0.9);
-  }
-`;
-
-export const ErrorLoadTrendsMessage = styled.div`
-  padding-left: 10px;
-  background: none;
-  margin-top: 0;
-  width: 90%;
 `;

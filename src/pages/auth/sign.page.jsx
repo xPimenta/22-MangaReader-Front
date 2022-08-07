@@ -94,7 +94,7 @@ export default function SignForm({ isSignUp }) {
           </>
         )}
         <button onClick={handleSubmit}>{isSignUp ? "Sign Up" : "Login"}</button>
-        <Link to={isSignUp ? "/" : "/sign-up"}>
+        <Link to={isSignUp ? "/sign-in" : "/sign-up"}>
           {isSignUp ? "Switch back to login" : "First Time? Create an account!"}
         </Link>
       </Form>

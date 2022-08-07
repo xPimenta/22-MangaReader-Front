@@ -67,7 +67,7 @@ export default function SearchBar() {
         minLength={3}
         debounceTimeout={300}
         onChange={handleInput}
-        placeholder="Search for people"
+        placeholder="Search for mangas"
       />
       <SearchIcon />
       {areResultsDisplayed && (
