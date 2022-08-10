@@ -8,6 +8,8 @@ import { ThemeProvider } from "styled-components";
 import ResetCss from "./styles/reset.css.js";
 import { theme } from "./styles/theme";
 import HomePage from "./pages/home/index";
+import Upload from "./pages/upload";
+import Reader from "./pages/reader";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
               <Route path="/sign-in" element={<SignForm isSignUp={false} />} />
               <Route path="/sign-up" element={<SignForm isSignUp={true} />} />
               <Route path="/" element={<HomePage />} />
+              <Route path="/upload" element={<Upload />} />
+              <Route path="/reader" element={<Reader />} />
               {/* <Route path="/hashtag/:hashtag" element={<Hashtag />} /> */}
             </Routes>
           </BrowserRouter>
