@@ -15,10 +15,11 @@ export default function Reader() {
     useEffect(() => {
         loadImages();
     }, []);
+
     return (
         <>
         <div>
-            <h1 className="title">Cloudinary Gallery v2</h1>
+            <h1 className="title">Cloudinary Gallery v3</h1>
             <div className="gallery">
                 {imageIds &&
                     imageIds.map((imageId, index) => (

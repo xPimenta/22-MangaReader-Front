@@ -9,13 +9,17 @@ import * as s from "./style";
 
 export default function Upload() {
     const [fileInputState, setFileInputState] = useState('');
-    const [previewSource, setPreviewSource] = useState('');
-    const [selectedFile, setSelectedFile] = useState();
+    const [previewSource, setPreviewSource] = useState([]);
+    const [selectedFiles, setSelectedFiles] = useState([]);
     const [successMsg, setSuccessMsg] = useState('');
     const [errMsg, setErrMsg] = useState('');
 
+    console.log(previewSource);
+
     const navigate = useRef(useNavigate());
     const { userToken } = useContext(UserContext);
+
+    // console.log(previewSource)
 
   // useEffect(() => {
   //   if (!userToken) navigate.current("/");
@@ -24,25 +28,27 @@ export default function Upload() {
 
 
     const handleFileInputChange = (e) => {
-        const file = e.target.files[0];
-        previewFile(file);
-        setSelectedFile(file);
+        const files = [...e.target.files];
+        previewFile(files);
+        setSelectedFiles(files);
         setFileInputState(e.target.value);
     };
 
-    const previewFile = (file) => {
+    const previewFile = (files) => {
+      files.forEach((file) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onloadend = () => {
-            setPreviewSource(reader.result);
+            setPreviewSource(previewSource => [...previewSource, reader.result]);
         };
+      });
     };
 
     const handleSubmitFile = (e) => {
         e.preventDefault();
-        if (!selectedFile) return;
+        if (!selectedFiles) return;
         const reader = new FileReader();
-        reader.readAsDataURL(selectedFile);
+        reader.readAsDataURL(selectedFiles);
         reader.onloadend = () => {
             uploadImage(reader.result);
         };
@@ -83,18 +89,18 @@ export default function Upload() {
                     onChange={handleFileInputChange}
                     value={fileInputState}
                     className="form-input"
+                    multiple
                 />
                 <button className="btn" type="submit">
                     Submit
                 </button>
             </form>
-            {previewSource && (
-                <img
-                    src={previewSource}
-                    alt="chosen"
-                    style={{ height: '300px' }}
-                />
-            )}
+          </s.ListName>
+
+          <s.ListName>
+            {previewSource.map((source, index) => (
+              <img key={index} src={source} alt="preview" />
+            ))}
           </s.ListName>
         </s.MostReadWrapp>
 
