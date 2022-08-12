@@ -29,6 +29,8 @@ export default function Upload() {
 
     const handleFileInputChange = (e) => {
         const files = [...e.target.files];
+        files.sort((a, b) => a.name.localeCompare(b.name));
+        setPreviewSource([]);
         previewFile(files);
         setSelectedFiles(files);
         setFileInputState(e.target.value);
@@ -36,13 +38,14 @@ export default function Upload() {
 
     const previewFile = (files) => {
       files.forEach((file) => {
+        console.log(file.name)
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onloadend = () => {
-            setPreviewSource(previewSource => [...previewSource, reader.result]);
+            setPreviewSource(previewSource => [...previewSource, [reader.result, file.name]]);
         };
       });
-    };
+    }
 
     const handleSubmitFile = (e) => {
         e.preventDefault();
@@ -80,6 +83,7 @@ export default function Upload() {
       <S.Body>
         <s.MostReadWrapp>
           <s.ListName>Post Manga</s.ListName>
+
           <s.ListName>
           <form onSubmit={handleSubmitFile} className="form">
                 <input
@@ -97,11 +101,14 @@ export default function Upload() {
             </form>
           </s.ListName>
 
-          <s.ListName>
+          <s.HorizontalList>
             {previewSource.map((source, index) => (
-              <img key={index} src={source} alt="preview" />
+                <s.HorizontalListItem key={index}>
+              <img key={index} src={source[0]} alt="preview"/>
+                <p>{source[1]}</p>
+                </s.HorizontalListItem>
             ))}
-          </s.ListName>
+          </s.HorizontalList>
         </s.MostReadWrapp>
 
         {/* <s.Footer>

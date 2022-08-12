@@ -1,18 +1,5 @@
 import styled from "styled-components";
 
-export const BannerWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  width: clamp(400px, 100%, 100%);
-  height: 200px;
-
-  background-color: grey;
-
-  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
-    heigth: 100vh;
-  }
-`;
-
 export const MostReadWrapp = styled.div`
   display: flex;
   flex-direction: column;
@@ -48,7 +35,7 @@ export const HorizontalList = styled.div`
     display: none;
   }
 
-  height: 300px;
+  height: 320px;
   background-color: green;
 `;
 
@@ -61,7 +48,10 @@ export const HorizontalListItem = styled.div`
    height: 100%;
    width: 180px;
    
-
+   img{
+    height: 270px;
+    width: 100%;
+   }
    background-color: red;
 `;
 
