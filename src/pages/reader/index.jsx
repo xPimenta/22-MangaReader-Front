@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Image } from 'cloudinary-react';
+import { axios } from 'axios';
+import { useParams } from 'react-router-dom';
+
 
 export default function Reader() {
-    const [imageIds, setImageIds] = useState();
-    const loadImages = async () => {
-        try {
-            const res = await fetch(`${process.env.REACT_APP_API_URL}/api/images`);
-            const data = await res.json();
-            setImageIds(data);
-        } catch (err) {
-            console.error(err);
-        }
-    };
+    const [images, setImages] = useState([]);
+
+    console.log(images);
+    const { chapterId } = useParams();
+
     useEffect(() => {
-        loadImages();
+        axios  
+            .get(`${process.env.REACT_APP_API_URL}/getChapter/${chapterId}`)
+            .then((res) => setImages(res.data));
     }, []);
 
     return (
@@ -21,15 +20,15 @@ export default function Reader() {
         <div>
             <h1 className="title">Cloudinary Gallery v3</h1>
             <div className="gallery">
-                {imageIds &&
-                    imageIds.map((imageId, index) => (
-                        <Image
-                            key={index}
-                            cloudName="dlua7rfnv"
-                            publicId={imageId}
-                            width="300"
-                            crop="scale"
-                        />
+                {images &&
+                    images.map((image, index) => (
+                        <p>IMAGE</p>
+                        // <Image
+                        //     key={index}
+                        //     publicId={image}
+                        //     width="300"
+                        //     crop="scale"
+                        // />
                     ))}
             </div>
         </div>

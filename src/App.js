@@ -23,7 +23,7 @@ function App() {
               <Route path="/sign-up" element={<SignForm isSignUp={true} />} />
               <Route path="/" element={<HomePage />} />
               <Route path="/upload" element={<Upload />} />
-              <Route path="/reader" element={<Reader />} />
+              <Route path="/reader/:mangaId" element={<Reader />} />
               {/* <Route path="/hashtag/:hashtag" element={<Hashtag />} /> */}
             </Routes>
           </BrowserRouter>

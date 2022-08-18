@@ -13,6 +13,13 @@ export const BannerWrap = styled.div`
   }
 `;
 
+export const ChapterCard = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  
+  `;
+
 export const MostReadWrapp = styled.div`
   display: flex;
   flex-direction: column;
@@ -103,6 +110,10 @@ export const VerticalListItem = styled.div`
   width: 100%;
   height: 100px;
   background-color: red;
+
+  :hover {
+    background-color: lightgrey;
+  }
 `;
 
 export const Footer = styled.div`
