@@ -58,7 +58,7 @@ export default function Header() {
       <Link to="/">
         <h1>Mangas</h1>
       </Link>
-      <SearchBar />
+      {/* <SearchBar /> */}
       <Navbar onClick={handleMenuClick}>
         <NavItem>
           <LogoutArrow />

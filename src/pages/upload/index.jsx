@@ -11,11 +11,8 @@ import * as s from "./style";
 export default function Upload() {
   const [fileInputState, setFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState([]);
-  const [mangaUploadData, setMangaUploadData] = useState([]);
   const [mangaName, setMangaName] = useState([]);
   const [mangaChapter, setMangaChapter] = useState([]);
-  const [successMsg, setSuccessMsg] = useState("");
-  const [errMsg, setErrMsg] = useState("");
 
   console.log(previewSource);
 
@@ -65,7 +62,6 @@ export default function Upload() {
       uploadMangaData([mangaName, mangaChapter, previewSource]);
     } catch (err) {
       console.error(err);
-      setErrMsg("Something went wrong!");
     }
   };
 
@@ -77,7 +73,6 @@ export default function Upload() {
       // setSuccessMsg("Image uploaded successfully");
     } catch (err) {
       console.error(err);
-      setErrMsg("Something went wrong!");
     }
   };
 

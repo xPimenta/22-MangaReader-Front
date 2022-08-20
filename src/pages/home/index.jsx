@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 
 import Header from "../../components/header.js";
-import MostReadChapters from "../../components/MostReadChapters";
+import MostReadMangas from "../../components/MostReadMangas";
 import LatestChapters from "../../components/LatestChapters";
 
 // import Footer from "../../components/footer.js";
@@ -24,10 +24,10 @@ export default function HomePage() {
       <Header />
       <S.Body>
         <s.BannerWrap> BANNER IMG </s.BannerWrap>
-        {/* <s.MostReadWrapp>
+        <s.MostReadWrapp>
           <s.ListName>Most Read</s.ListName>
-          <MostReadChapters />
-        </s.MostReadWrapp> */}
+          <MostReadMangas />
+        </s.MostReadWrapp>
 
         <s.LatestChaptersWrapp>
           <s.ListName>Latest Chapters</s.ListName>

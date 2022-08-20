@@ -6,25 +6,25 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/header.js";
 
 import * as S from "../../styles/global.style";
-import * as s from "./style";
+// import * as s from "./style";
 
-export default function Reader() {
-    const { chapterId } = useParams();
+export default function Manga() {
+    const { mangaId } = useParams();
     const navigate = useRef(useNavigate());
 
-    const [chapter, setChapter] = useState([]);
-    console.log(chapter)
+    const [manga, setManga] = useState([]);
+    console.log(manga)
 
     useEffect(() => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}/chapter/${chapterId}`)
-            .then((res) => setChapter(res.data))
-    } , [chapterId]);
+            .get(`${process.env.REACT_APP_API_URL}/manga/${mangaId}`)
+            .then((res) => setManga(res.data))
+    } , [mangaId]);
 
     return (
         <>
-              {/* <Header /> */}
-            <s.ChapterTitle>
+              <Header />
+            {/* <s.ChapterTitle>
                 <h1>{chapter && chapter[1]} {chapter && chapter[2]}</h1>
                 <h2 onClick={() => navigate.current("/")}>Return</h2>
                 </s.ChapterTitle>
@@ -35,7 +35,7 @@ export default function Reader() {
                             src={image.url}
                         />
                     ))}
-             </s.VerticalReader>
+             </s.VerticalReader> */}
         </>
     );
 }

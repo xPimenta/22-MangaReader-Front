@@ -11,6 +11,8 @@ import HomePage from "./pages/home/index";
 import Upload from "./pages/upload";
 import Reader from "./pages/reader";
 
+import Manga from "./pages/manga/";
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -23,8 +25,8 @@ function App() {
               <Route path="/sign-up" element={<SignForm isSignUp={true} />} />
               <Route path="/" element={<HomePage />} />
               <Route path="/upload" element={<Upload />} />
-              <Route path="/reader/:mangaId" element={<Reader />} />
-              {/* <Route path="/hashtag/:hashtag" element={<Hashtag />} /> */}
+              <Route path="/manga/:mangaId" element={<Manga />} />
+              <Route path="/reader/:chapterId" element={<Reader />} />
             </Routes>
           </BrowserRouter>
         </MenuProvider>
