@@ -69,7 +69,6 @@ export const HorizontalListItem = styled.div`
    width: 180px;
    overflow-x: hidden;
    
-
    background-color: red;
 `;
 

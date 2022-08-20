@@ -24,7 +24,14 @@ export default function Manga() {
     return (
         <>
               <Header />
-            {/* <s.ChapterTitle>
+
+              {/* <s.LatestChaptersWrapp>
+          <s.ListName>Latest Chapters</s.ListName>
+          <LatestChapters />
+        </s.LatestChaptersWrapp>
+
+
+            <s.ChapterTitle>
                 <h1>{chapter && chapter[1]} {chapter && chapter[2]}</h1>
                 <h2 onClick={() => navigate.current("/")}>Return</h2>
                 </s.ChapterTitle>
