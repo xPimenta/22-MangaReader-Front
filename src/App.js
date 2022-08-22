@@ -12,7 +12,7 @@ import Upload from "./pages/upload";
 import Reader from "./pages/reader";
 
 import Manga from "./pages/manga/";
-
+//commit 
 function App() {
   return (
     <ThemeProvider theme={theme}>
