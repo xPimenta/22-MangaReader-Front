@@ -48,7 +48,7 @@ export default function SignForm({ isSignUp }) {
           formInput,
         )
         .then(({ data }) => logUserIn(data))
-        .catch(({ response }) => alertFormErrors([response.data]))
+        // .catch(({ response }) => alertFormErrors([response]))
         .finally(() => setIsAwaitingRequest(false));
     }
   };
