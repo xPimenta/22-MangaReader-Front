@@ -15,11 +15,10 @@ export default function HomePage() {
   const navigate = useNavigate();
   const { userToken } = useContext(UserContext);
 
-  // useEffect(() => {
-  //   if (!userToken) navigate.current("/");
-  //   // if(!userToken) console.log("no token");
+  useEffect(() => {
+    if (!userToken) navigate("/sign-in");
   
-  // }, [userToken]);
+  }, [userToken]);
 
   useEffect(() => {
     navigate("/");

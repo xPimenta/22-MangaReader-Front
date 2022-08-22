@@ -10,26 +10,11 @@ export function UserProvider({ children }) {
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     if (token) {
-      const url = `${process.env.REACT_APP_API_URL}/validateToken`;
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-
-      axios
-        .post(url, {}, config)
-        .then(({ data }) => {
-          const { token, ...userData } = data;
-          setUserToken(token);
-          setUserInfo(userData);
-        })
-        .catch(() => {
-          localStorage.removeItem("token");
-          localStorage.removeItem("userInfo");
-        });
+      setUserToken(token);
     }
   }, []);
+
+    
 
   const logUserIn = (userInfo) => {
     const { token, id, username, email, pictureUrl } = userInfo;

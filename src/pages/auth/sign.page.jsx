@@ -1,19 +1,19 @@
 import axios from "axios";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input";
 import { UserContext } from "../../contexts/user.context";
 import { FormBanner, FormWrapper, Form } from "./form.styles.jsx";
 
 export default function SignForm({ isSignUp }) {
-  const navigate = useRef(useNavigate());
+  const navigate = useNavigate();
   const { userToken, logUserIn } = useContext(UserContext);
 
   const [formInput, setFormInput] = useState({});
   const [isAwaitingRequest, setIsAwaitingRequest] = useState(false);
 
   useEffect(() => {
-    if (userToken) navigate.current("/timeline");
+    if (userToken) navigate("/");
   }, [userToken]);
 
   const handleInput = (e) => {
@@ -26,8 +26,8 @@ export default function SignForm({ isSignUp }) {
     const formErrors = [];
     if (!formInput.email) formErrors.push("Email is required");
     if (!formInput.password) formErrors.push("Password is required");
-    if (!formInput.username && isSignUp) formErrors.push("username is required");
-    if (!formInput.pictureUrl && isSignUp) formErrors.push("pictureUrl is required");
+    if (!formInput.name && isSignUp) formErrors.push("username is required");
+    if (!formInput.pictureURL && isSignUp) formErrors.push("pictureUrl is required");
 
     const formIsValid = formErrors.length === 0;
     if (!formIsValid) alertFormErrors(formErrors);
@@ -41,6 +41,7 @@ export default function SignForm({ isSignUp }) {
 
     if (!isAwaitingRequest && validateFormInput()) {
       setIsAwaitingRequest(true);
+      console.log(formInput);
       axios
         .post(
           `${process.env.REACT_APP_API_URL}/${isSignUp ? "sign-up" : "sign-in"}`,
@@ -79,16 +80,16 @@ export default function SignForm({ isSignUp }) {
           <>
             <Input
               type="text"
-              placeholder="username"
+              placeholder="name"
               onChange={handleInput}
-              name="username"
+              name="name"
               required={true}
             />
             <Input
               type="text"
-              placeholder="pictureUrl"
+              placeholder="pictureURL"
               onChange={handleInput}
-              name="pictureUrl"
+              name="pictureURL"
               required={true}
             />
           </>
