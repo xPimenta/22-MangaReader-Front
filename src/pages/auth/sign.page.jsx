@@ -41,7 +41,8 @@ export default function SignForm({ isSignUp }) {
 
     if (!isAwaitingRequest && validateFormInput()) {
       setIsAwaitingRequest(true);
-      console.log(formInput);
+      console.log("FORM INPUT",formInput);
+      console.log("REACT APP API URL",`${process.env.REACT_APP_API_URL}`)
       axios
         .post(
           `${process.env.REACT_APP_API_URL}/${isSignUp ? "sign-up" : "sign-in"}`,
