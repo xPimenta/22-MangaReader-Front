@@ -7,6 +7,7 @@ import Header from "../../components/header.js";
 // import Footer from "../../components/footer.js";
 import * as S from "../../styles/global.style";
 import * as s from "./style";
+import { warning } from "react-router/lib/router";
 
 export default function Upload() {
   const [fileInputState, setFileInputState] = useState("");
@@ -70,7 +71,7 @@ export default function Upload() {
       await axios.post(`${process.env.REACT_APP_API_URL}/api/upload`, mangaUploadData)
 
       setFileInputState("");
-      prompt("Uploaded successfully");
+      warning("Manga uploaded successfully");
     } catch (err) {
       console.error(err);
     } 
