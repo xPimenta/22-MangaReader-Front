@@ -96,5 +96,5 @@ export const HorizontalListItem = styled.div`
     height: 270px;
     width: 100%;
    }
-   background-color: red;
+   background-color: white;
 `;
