@@ -71,7 +71,7 @@ export default function Upload() {
       await axios.post(`${process.env.REACT_APP_API_URL}/api/upload`, mangaUploadData)
 
       setFileInputState("");
-      warning("Manga uploaded successfully");
+      alert("Manga uploaded successfully");
     } catch (err) {
       console.error(err);
     } 
