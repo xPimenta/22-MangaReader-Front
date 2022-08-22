@@ -91,6 +91,7 @@ export const HorizontalListItem = styled.div`
   justify-content: center;
    height: 100%;
    width: 180px;
+   overflow: hidden;
    
    img{
     height: 270px;
