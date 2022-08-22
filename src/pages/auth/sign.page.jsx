@@ -46,7 +46,7 @@ export default function SignForm({ isSignUp }) {
       axios
         .post(
           `${process.env.REACT_APP_API_URL}/${isSignUp ? "sign-up" : "sign-in"}`,
-          formInput,
+          formInput
         )
         .then(({ data }) => logUserIn(data))
         .catch(({ response }) => alertFormErrors([response.data]))
