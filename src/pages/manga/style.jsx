@@ -72,10 +72,11 @@ export const HorizontalListItem = styled.div`
    overflow-x: hidden;
 
     &:hover {
+  
       background-color: black;
       color: white;
       cursor: pointer;
-      filter: brightness(1.1);
+
     }
    
 
@@ -155,7 +156,6 @@ export const VerticalListItem = styled.div`
   :hover {
     background-color: white;
     color: black;
-    filter: brightness(1.1);
   }
 
   img{

@@ -16,7 +16,7 @@ export default function Upload() {
 
   console.log(previewSource);
 
-  const navigate = useRef(useNavigate());
+  const navigate = useNavigate();
   const { userToken } = useContext(UserContext);
 
   // useEffect(() => {
@@ -62,7 +62,7 @@ export default function Upload() {
       uploadMangaData([mangaName, mangaChapter, previewSource]);
     } catch (err) {
       console.error(err);
-    }
+    } 
   };
 
   const uploadMangaData = async (mangaUploadData) => {
@@ -73,7 +73,8 @@ export default function Upload() {
       // setSuccessMsg("Image uploaded successfully");
     } catch (err) {
       console.error(err);
-    }
+    } 
+
   };
 
   return (
@@ -107,7 +108,7 @@ export default function Upload() {
                 multiple
               />
               <button className="btn" type="submit">
-                Submit
+                UPLOAD
               </button>
             </form>
           </s.ListName>
@@ -121,14 +122,6 @@ export default function Upload() {
             ))}
           </s.HorizontalList>
         </s.MostReadWrapp>
-
-        <s.Footer>
-          <s.FooterContent> Manga Reader © 2022 </s.FooterContent>
-          <s.FooterContent>
-            This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of
-            Service apply.
-          </s.FooterContent>
-        </s.Footer>
       </S.Body>
     </>
   );

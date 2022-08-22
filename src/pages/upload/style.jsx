@@ -5,8 +5,9 @@ export const MostReadWrapp = styled.div`
   flex-direction: column;
   margin-top: 32px;
   width: clamp(400px, 100%, 90%);
+  height: auto;
 
-  background-color: lightgray;
+  background-color: black;
 
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
     heigth: 100vh;
@@ -15,14 +16,55 @@ export const MostReadWrapp = styled.div`
 
 export const ListName = styled.h1`
 
-  font-family: "Oswald";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 43px;
-  line-height: 64px;
+font-family: ${({ theme }) => theme.fonts.logoFont};
+    font-style: normal;
+  font-size: 50px;
   margin-left: 15px;
 
-  color: black;
+  color: white;
+
+  form{
+
+    margin-top: 15px;
+    
+display: flex;
+flex-direction: column;
+  }
+
+  input{
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    font-family: ${({ theme }) => theme.fonts.logoFont};
+    font-size: ${({ theme }) => theme.fontSize.sm};
+    border-radius: ${({ theme }) => theme.borderRadius.sm};
+    border: none;
+    background: ${({ theme }) => theme.colors.inputBackground};
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.text2};
+    }
+
+
+
+      color: black;
+
+  }
+
+  button{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    font-family: ${({ theme }) => theme.fonts.logoFont};
+    font-size: ${({ theme }) => theme.fontSize.sm};
+    border-radius: ${({ theme }) => theme.borderRadius.sm};
+    border: none;
+    background: ${({ theme }) => theme.colors.inputBackground};
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.text2};
+    }
+  }
+
 `;
 
 export const HorizontalList = styled.div`
@@ -35,8 +77,10 @@ export const HorizontalList = styled.div`
     display: none;
   }
 
+  
+
   height: 320px;
-  background-color: green;
+  background-color: black;
 `;
 
 export const HorizontalListItem = styled.div`
@@ -53,61 +97,4 @@ export const HorizontalListItem = styled.div`
     width: 100%;
    }
    background-color: red;
-`;
-
-export const LatestChaptersWrapp = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 32px;
-  margin-bottom: 30px;
-  width: clamp(400px, 100%, 90%);
-
-  background-color: lightgray;
-
-  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
-    heigth: 100vh;
-  }
-`;
-
-export const VerticalList = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 15px 15px 0px 15px;
-  -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  width: 100%;
-  height: 1165px;
-  background-color: green;
-`;
-
-export const VerticalListItem = styled.div`
-  flex: 0 0 auto;
-  justify-content: center;
-  margin-bottom: 15px;
-
-  width: 100%;
-  height: 100px;
-  background-color: red;
-`;
-
-export const Footer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: clamp(400px, 100%, 90%);
-  height: 100px;
-  background-color: lightgray;
-`;
-export const FooterContent = styled.div`
-  font-family: "Oswald";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  text-align: center;
-  margin-top: 15px;
 `;

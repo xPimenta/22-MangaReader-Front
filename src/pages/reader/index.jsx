@@ -25,8 +25,8 @@ export default function Reader() {
         <>
               {/* <Header /> */}
             <s.ChapterTitle>
-                <h1>{chapter && chapter[1]} {chapter && chapter[2]}</h1>
-                <h2 onClick={() => navigate.current("/")}>Return</h2>
+                <h1>{chapter && chapter[1]} - {chapter && chapter[2]}</h1>
+                <h2 onClick={() => navigate.current(-1)}>Return</h2>
                 </s.ChapterTitle>
             <s.VerticalReader>
                     {chapter[0] &&  chapter[0].map((image, index) => (

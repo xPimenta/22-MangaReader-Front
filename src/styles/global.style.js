@@ -29,6 +29,8 @@ export const Body = styled.main`
   min-height: calc(100vh - ${({ theme }) => theme.spacing.headerHeight});
   margin-top: ${({ theme }) => theme.spacing.headerHeight};
   transition: all 300ms ease;
+
+  background-color: black;
 `
 
 

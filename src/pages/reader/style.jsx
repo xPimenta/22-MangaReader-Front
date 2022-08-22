@@ -7,8 +7,6 @@ export const Image = styled.img`
 
   width: calc(20% + 300px);
   height: auto;
-
-  background-color: red;
 `;
 
 export const VerticalReader = styled.div`
@@ -26,18 +24,21 @@ margin-top: 55px;
 
   width: 100%;
   height: 100%;
-  background-color: green;
+  background-color: black;
 `;
 
 export const ChapterTitle = styled.div`
+font-family: ${({ theme }) => theme.fonts.logoFont};
+    font-style: normal;
+    font-size: 40px;
 
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    font-size: 30px;
+    justify-content: space-between;
+
     font-weight: bold;
     text-align: center;
-    padding: 30px;
+    padding: 5px 15px 5px 15px;
     margin-bottom: -50px;
 
 `;

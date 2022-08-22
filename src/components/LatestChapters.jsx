@@ -8,6 +8,7 @@ export default function LatestChapters() {
   const navigate = useNavigate();
 
   const [latestChapters, setLatestChapters] = useState([]);
+  console.log(latestChapters)
 
   useEffect(() => {
       axios
@@ -22,12 +23,19 @@ export default function LatestChapters() {
 
   return (
     <s.VerticalList>
-        {latestChapters.map((chapter) => (
+        {latestChapters && latestChapters.map((chapter) => (
           <s.VerticalListItem key={chapter.id}
           onClick={() => getMangaChapter(chapter.id)}>
+            <img src={chapter.coverUrl} alt="manga chapter" />
+            <s.NameChapter>
             <h3>{chapter.name}</h3>
             <h3>Chapter {chapter.number}</h3>
-            <h3>{chapter.createdAt}</h3>
+            </s.NameChapter>
+            <h4>{new Intl.DateTimeFormat('en-GB', { 
+                month: 'long', 
+                day: '2-digit',
+                year: 'numeric', 
+            }).format(new Date(chapter.createdAt))}</h4>
           </s.VerticalListItem>
         ))}
     </s.VerticalList>
