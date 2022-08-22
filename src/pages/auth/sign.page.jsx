@@ -49,7 +49,7 @@ export default function SignForm({ isSignUp }) {
           formInput,
         )
         .then(({ data }) => logUserIn(data))
-        .catch(({ response }) => alertFormErrors([response]))
+        .catch(({ response }) => alertFormErrors([response.data]))
         .finally(() => setIsAwaitingRequest(false));
     }
   };
