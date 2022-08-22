@@ -7,12 +7,12 @@ export function UserProvider({ children }) {
   const [userToken, setUserToken] = useState("");
   const [userInfo, setUserInfo] = useState({});
 
-  useEffect(() => {
-    const token = JSON.parse(localStorage.getItem("token"));
-    if (token) {
-      setUserToken(token);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const token = JSON.parse(localStorage.getItem("token"));
+  //   if (token) {
+  //     setUserToken(token);
+  //   }
+  // }, []);
 
     
 
