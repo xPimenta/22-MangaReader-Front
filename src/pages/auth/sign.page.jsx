@@ -9,7 +9,9 @@ export default function SignForm({ isSignUp }) {
   const navigate = useNavigate();
   const { userToken, logUserIn } = useContext(UserContext);
 
-  window.location.reload();
+  useEffect(() => {
+	window.location.reload();
+	  }, []);
 
   const [formInput, setFormInput] = useState({});
   const [isAwaitingRequest, setIsAwaitingRequest] = useState(false);
