@@ -100,3 +100,16 @@ export const HorizontalListItem = styled.div`
    background-color: white;
    border-radius: 5px;
 `;
+
+export const Body = styled.main`
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: calc(100vh - ${({ theme }) => theme.spacing.headerHeight});
+  margin-top: ${({ theme }) => theme.spacing.headerHeight};
+  transition: all 300ms ease;
+
+  background-color: black;
+`;

@@ -7,7 +7,6 @@ import Banner from "../../components/banner.jsx";
 import MostReadMangas from "../../components/MostReadMangas";
 import LatestChapters from "../../components/LatestChapters";
 
-// import Footer from "../../components/footer.js";
 import * as S from "../../styles/global.style";
 import * as s from "./style";
 
@@ -15,23 +14,16 @@ export default function HomePage() {
   const navigate = useNavigate();
   const { userToken } = useContext(UserContext);
 
-  useEffect(() => {
-    if (!userToken) navigate("/sign-in");
-  
-  }, [userToken]);
-
-  useEffect(() => {
-    navigate("/");
-  }, []);
-
-
+  function secret() {
+	navigate("/upload");
+  }
 
   return (
     <>
       <Header />
       <S.Body>
         <Banner />
-        <s.MostReadWrapp>
+        <s.MostReadWrapp >
           <s.ListName>Most Read</s.ListName>
           <MostReadMangas />
         </s.MostReadWrapp>
@@ -42,7 +34,7 @@ export default function HomePage() {
         </s.LatestChaptersWrapp>
 
         <s.Footer>
-          <s.FooterContent> Manga Reader © 2022 </s.FooterContent>
+          <s.FooterContent onClick={secret}> Manga Reader © 2022 </s.FooterContent>
           <s.FooterContent>
             This site is protected by Google Privacy Policy and Terms of
             Service apply.

@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^18.7.9"
+    "@types/node": "^18.7.9",
+    "@types/styled-components": "^5.1.26"
   }
 }

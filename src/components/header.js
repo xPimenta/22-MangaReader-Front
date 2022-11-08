@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link , useNavigate } from "react-router-dom";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import * as S from "../styles/global.style.js";
@@ -11,8 +11,13 @@ import { UserContext } from "../contexts/user.context";
 import profilePic from "../assets/default-avatar.jpg";
 
 export default function Header() {
+  const navigate = useNavigate();
   const { menuIsOpen, setMenuIsOpen } = useContext(MenuContext);
-  const { logUserOut, userInfo } = useContext(UserContext);
+  const { userToken ,logUserOut, userInfo } = useContext(UserContext);
+
+useEffect(() => {
+  if (!userToken) navigate("/sign-in");
+}, [userToken]);
 
   const handleMenuClick = () => setMenuIsOpen(!menuIsOpen);
 
@@ -69,7 +74,7 @@ export default function Header() {
           </NavItemHidden>
         </NavItem>
         <NavItem>
-          <img src={userInfo.pictureUrl || profilePic} alt="pic" />
+          <img src={userInfo.pictureURL || profilePic} width="50" alt="pic" />
         </NavItem>
       </Navbar>
     </S.Header>

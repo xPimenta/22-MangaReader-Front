@@ -8,7 +8,6 @@ export default function LatestChapters() {
   const navigate = useNavigate();
 
   const [latestChapters, setLatestChapters] = useState([]);
-  console.log(latestChapters)
 
   useEffect(() => {
       axios
@@ -18,7 +17,7 @@ export default function LatestChapters() {
 
   const getMangaChapter = (chapterId) => {
     navigate(`/reader/${chapterId}`);
-    window.location.reload(true);
+    //window.location.reload(true);
   };
 
   return (

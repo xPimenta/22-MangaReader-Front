@@ -57,7 +57,7 @@ export default function SearchBar() {
 
   const getUserProfile = (user) => {
     navigate(`/user/${user}`);
-    window.location.reload(true);
+    //window.location.reload(true);
   };
 
   return (

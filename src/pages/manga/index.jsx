@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/user.context";
 
 import Header from "../../components/header.js";
 import Banner from "../../components/banner.jsx";
@@ -12,9 +13,9 @@ import * as s from "./style";
 export default function Manga() {
   const { mangaId } = useParams();
   const navigate = useNavigate();
+  const { userToken } = useContext(UserContext);
 
   const [manga, setManga] = useState([]);
-  console.log(manga);
 
   useEffect(() => {
     axios
@@ -33,8 +34,6 @@ export default function Manga() {
       <Header />
       <S.Body>
         <Banner />
-        
-
         <s.LatestChaptersWrapp>
         <s.ListName>{manga[0] && manga[0]} Chapters</s.ListName>
           <s.VerticalList>

@@ -13,7 +13,7 @@ export default function SignForm({ isSignUp }) {
   const [isAwaitingRequest, setIsAwaitingRequest] = useState(false);
 
   useEffect(() => {
-    if (userToken) navigate("/");
+    if (userToken != "undefined" && userToken) navigate("/");
   }, [userToken]);
 
   const handleInput = (e) => {
@@ -41,8 +41,6 @@ export default function SignForm({ isSignUp }) {
 
     if (!isAwaitingRequest && validateFormInput()) {
       setIsAwaitingRequest(true);
-      console.log("FORM INPUT",formInput);
-      console.log("REACT APP API URL",`${process.env.REACT_APP_API_URL}`)
       axios
         .post(
           `${process.env.REACT_APP_API_URL}/${isSignUp ? "sign-up" : "sign-in"}`,
@@ -50,7 +48,11 @@ export default function SignForm({ isSignUp }) {
         )
         .then(({ data }) => logUserIn(data))
         .catch(({ response }) => alertFormErrors([response.data]))
-        .finally(() => setIsAwaitingRequest(false));
+        .finally(() => {
+			setIsAwaitingRequest(false);
+			navigate("/sign-in");
+			//window.location.reload();
+		});
     }
   };
 

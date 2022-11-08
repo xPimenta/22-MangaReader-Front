@@ -9,20 +9,14 @@ import * as S from "../../styles/global.style";
 import * as s from "./style";
 
 export default function Upload() {
+	const navigate = useNavigate();
+	const { userToken } = useContext(UserContext);
+	console.log(userToken)
+
   const [fileInputState, setFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState([]);
   const [mangaName, setMangaName] = useState([]);
   const [mangaChapter, setMangaChapter] = useState([]);
-
-  console.log(previewSource);
-
-  const navigate = useNavigate();
-  const { userToken } = useContext(UserContext);
-
-  // useEffect(() => {
-  //   if (!userToken) navigate.current("/");
-  //   // if(!userToken) console.log("no token");
-  // }, [userToken]);
 
   const handleNameInputChange = (e) => {
     setMangaName(e.target.value);
@@ -70,7 +64,11 @@ export default function Upload() {
       await axios.post(`${process.env.REACT_APP_API_URL}/api/upload`, mangaUploadData)
 
       setFileInputState("");
-      alert("Uploaded successfully");
+      if(window.confirm("Manga uploaded successfully! Wanna go back to the home page?") == true){
+		navigate("/");
+	  } else {
+		window.location.reload();
+	  }
     } catch (err) {
       console.error(err);
     } 
@@ -80,7 +78,7 @@ export default function Upload() {
   return (
     <>
       <Header />
-      <S.Body>
+      <s.Body>
         <s.MostReadWrapp>
           <s.ListName>Post Manga</s.ListName>
 
@@ -122,7 +120,7 @@ export default function Upload() {
             ))}
           </s.HorizontalList>
         </s.MostReadWrapp>
-      </S.Body>
+      </s.Body>
     </>
   );
 }

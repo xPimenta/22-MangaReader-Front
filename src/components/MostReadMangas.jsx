@@ -22,7 +22,7 @@ export default function MostReadMangas() {
 
   const getManga = (mangaId) => {
     navigate(`/manga/${mangaId}`);
-    window.location.reload(true);
+    //window.location.reload(true);
   };
 
   return (
