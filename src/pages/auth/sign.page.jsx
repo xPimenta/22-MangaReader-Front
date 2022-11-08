@@ -9,6 +9,8 @@ export default function SignForm({ isSignUp }) {
   const navigate = useNavigate();
   const { userToken, logUserIn } = useContext(UserContext);
 
+  window.location.reload();
+
   const [formInput, setFormInput] = useState({});
   const [isAwaitingRequest, setIsAwaitingRequest] = useState(false);
 
@@ -51,7 +53,6 @@ export default function SignForm({ isSignUp }) {
         .finally(() => {
 			setIsAwaitingRequest(false);
 			navigate("/sign-in");
-			//window.location.reload();
 		});
     }
   };

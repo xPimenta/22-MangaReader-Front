@@ -24,7 +24,6 @@ export default function Manga() {
   }, [mangaId]);
 
   const getMangaChapter = (chapterId) => {
-    console.log(chapterId);
     navigate(`/reader/${chapterId}`);
     // window.location.reload(true);
   };

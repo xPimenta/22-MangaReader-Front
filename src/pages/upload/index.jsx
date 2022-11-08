@@ -11,7 +11,6 @@ import * as s from "./style";
 export default function Upload() {
 	const navigate = useNavigate();
 	const { userToken } = useContext(UserContext);
-	console.log(userToken)
 
   const [fileInputState, setFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState([]);

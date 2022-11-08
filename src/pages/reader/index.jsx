@@ -13,7 +13,6 @@ export default function Reader() {
     const navigate = useRef(useNavigate());
 
     const [chapter, setChapter] = useState([]);
-    console.log(chapter)
 
     useEffect(() => {
         axios
