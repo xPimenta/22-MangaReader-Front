@@ -16,6 +16,7 @@ export default function Manga() {
   const { userToken } = useContext(UserContext);
 
   const [manga, setManga] = useState([]);
+  console.log(manga)
 
   useEffect(() => {
     axios
